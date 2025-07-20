@@ -5,6 +5,9 @@ npm/letsencrypt/
 # Ignore Pi-hole runtime files and sensitive configs
 pihole/etc-pihole/
 
+immich/library/
+immich/postgres/
+
 # Docker related junk
 **/.DS_Store
 **/Thumbs.db
