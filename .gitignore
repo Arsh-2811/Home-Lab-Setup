@@ -1,0 +1,20 @@
+# Ignore all data directories and runtime files for Nginx Proxy Manager
+npm/data/
+npm/letsencrypt/
+
+# Ignore Pi-hole runtime files and sensitive configs
+pihole/etc-pihole/
+
+# Docker related junk
+**/.DS_Store
+**/Thumbs.db
+**/.idea/
+**/.vscode/
+**/node_modules/
+
+# Docker volumes (if you map any others in future)
+**/volumes/
+
+# Ignore temp files
+*.bak
+*.swp
