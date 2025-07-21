@@ -21,3 +21,6 @@ immich/postgres/
 # Ignore temp files
 *.bak
 *.swp
+
+.env
+certs/
