@@ -1,26 +1,60 @@
-# Ignore all data directories and runtime files for Nginx Proxy Manager
+# ===============================================================
+# General Exclusions
+# ===============================================================
+# Ignore all .env files and secrets
+*.env
+.env.*
+*.pem
+*.key
+*.crt
+*secret*
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and databases
+*.log
+*.db
+*.sqlite
+*.sql
+*.sql.gz
+
+# ===============================================================
+# Service-Specific Exclusions
+# ===============================================================
+
+# --- Immich ---
+# Ignore all user-generated content, media, thumbnails, backups, and database data.
+# Only the docker-compose.yml should be committed.
+immich/library/
+immich/thumbs/
+immich/upload/
+immich/profile/
+immich/postgres/
+
+# --- Nginx Proxy Manager (NPM) ---
+# Ignore all generated data, logs, SSL certificates, and the configuration database.
+# Only the docker-compose.yml is needed.
 npm/data/
 npm/letsencrypt/
 
-# Ignore Pi-hole runtime files and sensitive configs
-pihole/etc-pihole/
+# --- Pi-hole ---
+# Ignore the dynamic and sensitive files, but keep the core user configuration.
+# This keeps your adlists, custom domains (local DNS), and main config.
+pihole/etc-pihole/*
+!pihole/etc-pihole/pihole.toml
+!pihole/etc-pihole/adlists.list
+pihole/etc-pihole/hosts/*
+!pihole/etc-pihole/hosts/custom.list
 
-immich/library/
-immich/postgres/
+# Also ignore custom dnsmasq files unless you specifically create them.
+# If you add your own .conf files here, you can remove the next line.
+pihole/etc-dnsmasq.d/
 
-# Docker related junk
-**/.DS_Store
-**/Thumbs.db
-**/.idea/
-**/.vscode/
-**/node_modules/
-
-# Docker volumes (if you map any others in future)
-**/volumes/
-
-# Ignore temp files
-*.bak
-*.swp
-
-.env
+# --- Root Certificates ---
+# Ignore the root certs directory.
 certs/
+
+# --- Reports or other local files ---
+Report.md
