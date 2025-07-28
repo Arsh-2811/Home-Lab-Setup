@@ -1,0 +1,25 @@
+actions:
+  - title: "🟢 Start Jellyfin Only"
+    #icon: brand-jellyfin
+    shell: sh /media-stack/start-jellyfin.sh
+    timeout: 60
+    popupOnStart: execution-dialog
+
+  - title: "🚀 Start Full Media Stack"
+    #icon: player-play
+    shell: sh /media-stack/start-media-stack.sh
+    timeout: 120
+    popupOnStart: execution-dialog
+
+  - title: "🟠 Stop Download Stack (Keep Jellyfin)"
+    #icon: download-off
+    shell: sh /media-stack/stop-arr-stack.sh
+    timeout: 60
+    popupOnStart: execution-dialog
+
+  - title: "🛑 Stop Full Media Stack"
+    #icon: player-stop
+    shell: sh /media-stack/stop-media-stack.sh
+    timeout: 60
+    popupOnStart: execution-dialog
+

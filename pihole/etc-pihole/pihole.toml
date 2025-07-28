@@ -1,7 +1,7 @@
 # Pi-hole configuration file (v6.2.3)
 # Encoding: UTF-8
 # This file is managed by pihole-FTL
-# Last updated on 2025-07-26 13:16:38 IST
+# Last updated on 2025-07-29 00:49:56 IST
 
 [dns]
   # Array of upstream DNS servers used by Pi-hole
@@ -104,7 +104,14 @@
     "100.99.230.97 immich-app.home.local",
     "100.99.230.97 immich.home.local",
     "100.99.230.97 npm.home.local",
-    "100.99.230.97 pi.home.local"
+    "100.99.230.97 pi.home.local",
+    "100.99.230.97 jellyseer.home.local",
+    "100.99.230.97 radarr.home.local",
+    "100.99.230.97 sonarr.home.local",
+    "100.99.230.97 prowlarr.home.local",
+    "100.99.230.97 qBittorrent.home.local",
+    "100.99.230.97 jellyfin.home.local",
+    "100.99.230.97 olivetin.home.local"
   ] ### CHANGED, default = []
 
   # If set, A and AAAA queries for plain names, without dots or domain parts, are never
@@ -265,7 +272,7 @@
 
   [dns.blocking]
     # Should FTL block queries?
-    active = false ### CHANGED, default = true
+    active = true
 
     # How should FTL reply to blocked queries?
     #
@@ -1201,6 +1208,6 @@
   all = false
 
 # Configuration statistics:
-# 155 total entries out of which 148 entries are default
-# --> 7 entries are modified
+# 155 total entries out of which 149 entries are default
+# --> 6 entries are modified
 

@@ -1,0 +1,12 @@
+services:
+  olivetin:
+    container_name: olivetin
+    image: jamesread/olivetin:latest
+    user: root
+    privileged: true
+    volumes:
+      - ../media-stack:/media-stack
+      - ./config:/config
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "1337:1337"
