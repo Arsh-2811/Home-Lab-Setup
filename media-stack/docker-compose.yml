@@ -1,5 +1,4 @@
 services:
-  # VPN Kill Switch Gateway
   gluetun:
     image: qmcgaw/gluetun
     container_name: gluetun
@@ -14,18 +13,15 @@ services:
       - TZ=${TZ}
       - ALLOWED_IPS=0.0.0.0/1
       - NET_LOCAL=192.168.1.0/24
-      - NET_LOCAL=100.0.0.0/8  # Tailscale subnet
+      - NET_LOCAL=100.0.0.0/8
     sysctls:
       - net.ipv4.conf.all.rp_filter=2
     ports:
-      # qBittorrent WebUI Port (Changed from 8080 to avoid conflict)
       - "8118:8080"
-      # qBittorrent Incoming Torrent Port
       - "6881:6881"
       - "6881:6881/udp"
     restart: unless-stopped
 
-  # Torrent Client
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
@@ -34,17 +30,14 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
       - WEBUI_PORT=8080
-#      - WEBUI_ADDRESS=0.0.0.0
-#      - WEBUI_HOST_HEADER_VALIDATION=false
     volumes:
       - ${DATA_PATH}/appdata/qbittorrent:/config
-      - ${DATA_PATH}/media:/data  # Single unified data volume
-    network_mode: "service:gluetun" # CRITICAL: This enforces the VPN kill switch
+      - ${DATA_PATH}/media:/data
+    network_mode: "service:gluetun"
     depends_on:
       - gluetun
     restart: unless-stopped
 
-  # Indexer Manager
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:latest
     container_name: prowlarr
@@ -58,7 +51,6 @@ services:
       - "9696:9696"
     restart: unless-stopped
 
-  # TV Show Automation
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
@@ -68,12 +60,11 @@ services:
       - TZ=${TZ}
     volumes:
       - ${DATA_PATH}/appdata/sonarr:/config
-      - ${DATA_PATH}/media:/data  # Single unified data volume
+      - ${DATA_PATH}/media:/data
     ports:
       - "8989:8989"
     restart: unless-stopped
 
-  # Movie Automation
   radarr:
     image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
@@ -83,12 +74,11 @@ services:
       - TZ=${TZ}
     volumes:
       - ${DATA_PATH}/appdata/radarr:/config
-      - ${DATA_PATH}/media:/data  # Single unified data volume
+      - ${DATA_PATH}/media:/data
     ports:
       - "7878:7878"
     restart: unless-stopped
 
-  # Media Request Manager
   jellyseerr:
     image: fallenbagel/jellyseerr:latest
     container_name: jellyseerr
@@ -102,7 +92,6 @@ services:
       - "5055:5055"
     restart: unless-stopped
 
-  # Media Server
   jellyfin:
     image: lscr.io/linuxserver/jellyfin:latest
     container_name: jellyfin
@@ -114,7 +103,7 @@ services:
       - NVIDIA_DRIVER_CAPABILITIES=all
     volumes:
       - ${DATA_PATH}/appdata/jellyfin:/config
-      - ${DATA_PATH}/media:/data:ro # Mount media as read-only for security
+      - ${DATA_PATH}/media:/data:ro
     ports:
       - "8096:8096"
     deploy:

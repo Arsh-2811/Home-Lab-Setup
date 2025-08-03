@@ -1,9 +1,10 @@
 # ===============================================================
 # General Exclusions
 # ===============================================================
-# Ignore all .env files and secrets
+# Ignore all .env files and secrets, but allow .env.template files
 *.env
 .env.*
+!*.env.template
 *.pem
 *.key
 *.crt
