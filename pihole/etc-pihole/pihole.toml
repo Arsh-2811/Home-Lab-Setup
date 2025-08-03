@@ -1,7 +1,7 @@
 # Pi-hole configuration file (v6.2.3)
 # Encoding: UTF-8
 # This file is managed by pihole-FTL
-# Last updated on 2025-07-29 00:49:56 IST
+# Last updated on 2025-08-03 16:52:05 IST
 
 [dns]
   # Array of upstream DNS servers used by Pi-hole
@@ -111,7 +111,8 @@
     "100.99.230.97 prowlarr.home.local",
     "100.99.230.97 qBittorrent.home.local",
     "100.99.230.97 jellyfin.home.local",
-    "100.99.230.97 olivetin.home.local"
+    "100.99.230.97 olivetin.home.local",
+    "100.99.230.97 dashboard.home.local"
   ] ### CHANGED, default = []
 
   # If set, A and AAAA queries for plain names, without dots or domain parts, are never
@@ -846,7 +847,7 @@
     #
     # Possible values are:
     #     <valid Pi-hole password hash>
-    app_pwhash = ""
+    app_pwhash = "$BALLOON-SHA256$v=1$s=1024,t=32$o/4sqkessK2twOj/kGsUrw==$wL2ek73YXZgMwTVFzPDICQiea251JurdqFrOQaN/4Ek=" ### CHANGED, default = ""
 
     # Should application password API sessions be allowed to modify config settings?
     # Setting this to true allows third-party applications using the application password
@@ -1208,6 +1209,6 @@
   all = false
 
 # Configuration statistics:
-# 155 total entries out of which 149 entries are default
-# --> 6 entries are modified
+# 155 total entries out of which 148 entries are default
+# --> 7 entries are modified
 

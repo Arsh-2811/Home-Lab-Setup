@@ -1,0 +1,24 @@
+# settings.yaml
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+
+# Sets the title displayed in the browser tab.
+title: Home Lab Dashboard
+
+# Sets a fixed dark theme and slate color palette.
+theme: dark
+color: slate
+
+# This layout block defines the order and style of the service groups.
+# The names "Media" and "Network & System" must exactly match the group names
+# defined in services.yaml. Quoting is required for names with spaces.
+layout:
+  Media:
+    style: row # Displays services in this group in a row-based grid.
+    columns: 3 # Arranges the grid into 3 columns on wider screens.
+  "Network & System":
+    style: row
+    columns: 3
+
+# This global setting makes all service and bookmark links open in a new browser tab by default.
+target: _blank

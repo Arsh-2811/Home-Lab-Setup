@@ -1,0 +1,93 @@
+- Media:
+    - Jellyfin:
+        href: https://jellyfin.home.local
+        description: Media Streaming Server
+        icon: si-jellyfin
+        widget:
+          type: jellyfin
+          url: http://100.99.230.97:8096
+          key: "{{HOMEPAGE_VAR_JELLYFIN_KEY}}"
+
+    - Jellyseerr:
+        href: https://jellyseerr.home.local
+        description: Media Request Manager
+        icon: si-jellyseerr
+        widget:
+          type: jellyseerr
+          url: http://100.99.230.97:5055
+          key: "{{HOMEPAGE_VAR_JELLYSEERR_KEY}}"
+
+    - Sonarr:
+        href: https://sonarr.home.local
+        description: TV Series Management
+        icon: si-sonarr
+        widget:
+          type: sonarr
+          url: http://100.99.230.97:8989
+          key: "{{HOMEPAGE_VAR_SONARR_KEY}}"
+          enableQueue: true
+
+    - Radarr:
+        href: https://radarr.home.local
+        description: Movie Management
+        icon: si-radarr
+        widget:
+          type: radarr
+          url: http://100.99.230.97:7878
+          key: "{{HOMEPAGE_VAR_RADARR_KEY}}"
+          enableQueue: true
+
+    - Prowlarr:
+        href: https://prowlarr.home.local
+        description: Indexer Manager
+        icon: si-prowlarr
+        widget:
+          type: prowlarr
+          url: http://100.99.230.97:9696
+          key: "{{HOMEPAGE_VAR_PROWLARR_KEY}}"
+
+    - qBittorrent:
+        href: https://qbittorrent.home.local
+        description: Torrent Client
+        icon: si-qbittorrent
+        widget:
+          type: qbittorrent
+          url: http://100.99.230.97:8118
+          username: "{{HOMEPAGE_VAR_QBITTORRENT_USER}}"
+          password: "{{HOMEPAGE_VAR_QBITTORRENT_PASS}}"
+
+- "Network & System":
+    - Immich:
+        href: https://immich.home.local
+        description: Photo Management
+        icon: si-immich
+        widget:
+          type: immich
+          url: http://immich-server:2283
+          key: "{{HOMEPAGE_VAR_IMMICH_KEY}}"
+          version: 2
+
+    - Pi-hole:
+        href: https://pi.home.local
+        description: Network-wide Ad Blocker
+        icon: si-pihole
+        widget:
+          type: pihole
+          url: http://100.99.230.97:8080
+          key: "{{HOMEPAGE_VAR_PIHOLE_KEY}}"
+          version: 6
+
+    - Nginx Proxy Manager:
+        href: https://npm.home.local
+        description: Reverse Proxy Management
+        icon: si-nginxproxymanager
+        widget:
+          type: npm
+          url: http://100.99.230.97:81
+          username: "{{HOMEPAGE_VAR_NPM_USER}}"
+          password: "{{HOMEPAGE_VAR_NPM_PASS}}"
+
+    - Olivetin:
+        href: https://olivetin.home.local
+        description: Simple Command Runner
+        icon: si-linuxcontainers
