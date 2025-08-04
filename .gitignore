@@ -20,6 +20,7 @@ Thumbs.db
 *.sqlite
 *.sql
 *.sql.gz
+context.txt
 
 # ===============================================================
 # Service-Specific Exclusions
