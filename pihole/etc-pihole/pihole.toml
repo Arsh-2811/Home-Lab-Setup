@@ -1,7 +1,7 @@
 # Pi-hole configuration file (v6.2.3)
 # Encoding: UTF-8
 # This file is managed by pihole-FTL
-# Last updated on 2025-08-03 16:52:05 IST
+# Last updated on 2025-08-08 11:03:24 IST
 
 [dns]
   # Array of upstream DNS servers used by Pi-hole
@@ -112,7 +112,8 @@
     "100.99.230.97 qBittorrent.home.local",
     "100.99.230.97 jellyfin.home.local",
     "100.99.230.97 olivetin.home.local",
-    "100.99.230.97 dashboard.home.local"
+    "100.99.230.97 dashboard.home.local",
+    "100.99.230.97 portainer.home.local"
   ] ### CHANGED, default = []
 
   # If set, A and AAAA queries for plain names, without dots or domain parts, are never

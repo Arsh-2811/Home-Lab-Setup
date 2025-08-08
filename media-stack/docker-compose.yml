@@ -103,7 +103,7 @@ services:
       - NVIDIA_DRIVER_CAPABILITIES=all
     volumes:
       - ${DATA_PATH}/appdata/jellyfin:/config
-      - ${DATA_PATH}/media:/data:ro
+      - ${DATA_PATH}/media:/data
     ports:
       - "8096:8096"
     deploy:

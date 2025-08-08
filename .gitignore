@@ -54,6 +54,10 @@ pihole/etc-pihole/hosts/*
 # If you add your own .conf files here, you can remove the next line.
 pihole/etc-dnsmasq.d/
 
+# --- Portainer ---
+# Ignore Portainer persistent data directory; keep only docker-compose.yml
+portainer/portainer_data/
+
 # --- Root Certificates ---
 # Ignore the root certs directory.
 certs/
